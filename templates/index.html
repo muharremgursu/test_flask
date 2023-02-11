@@ -1,0 +1,25 @@
+{% extends 'layout.html'%}
+
+{% block title %}Anasayfa{% endblock %}
+
+{% block content %}
+
+    <div class="container bg-secondary text-center p-4">
+        <h1>Kanalıma Hoşgeldiniz!</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error aliquid vitae optio delectus labore rem, laborum consequuntur voluptas libero, earum incidunt voluptatem et corporis? Ratione.</p>
+    </div>
+
+    <!-- Siteye Login Yapıldığında anasayfada gösterilecek içerik -->
+    {% if session['logged_in'] %}
+        <h3>Tebrikler! Siteye giriş yaptığınız için aşağıdaki içeriği görüyorsunuz. Yoksa sadece yukarıdaki kutu vardı.</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, magni numquam officiis unde dolorem suscipit incidunt pariatur reprehenderit ratione iste fugit aperiam eligendi aliquam animi blanditiis. Voluptas expedita, perspiciatis fugiat eaque neque rerum quisquam rem obcaecati officiis vitae quas officia, error harum cum eveniet repellat illum minima. Unde corporis quisquam deserunt eveniet impedit reprehenderit? Vitae voluptas in odio saepe, reprehenderit adipisci quidem, atque sequi nihil eaque minima ad officia, illum minus ut? Consequuntur cumque aspernatur dolor nemo vitae consectetur dolorum, nesciunt optio architecto corporis autem delectus praesentium accusamus illo similique commodi ad omnis perferendis iusto, repudiandae rem doloribus labore! Quos.</p>
+    {% else %}
+    <!-- Siteden Logout Yapıldığında anasayfada gösterilecek içerik -->
+    <h3>Siteye giriş yaparsanız yukarıdaki kutudan fazlasını görürsünüz.</h3>
+    {% endif %}
+    
+
+    
+
+
+{% endblock %}

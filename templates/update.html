@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}Makaleyi Düzenle{% endblock %}
+
+{% block content %}
+
+{% from "includes/formhelpers.html" import render_field %}
+
+<h3>Makale'yi Düzenle</h3>
+<hr>
+<!--Makale Düzenleme-->
+<div class="container">
+    <form method='post'>
+        {{ render_field(form.title, class='form-control') }}
+        {{ render_field(form.content, class='form-control') }}
+        <button type="submit" class="btn btn-info" >Güncelle</button>
+    </form>
+</div>
+<!--Makale Düzenleme Son-->
+
+
+{% endblock %}

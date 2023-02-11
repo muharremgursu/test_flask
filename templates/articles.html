@@ -1,0 +1,30 @@
+{% extends 'layout.html'%}
+
+{% block title %}Makaleler{% endblock %}
+
+{% block content %}
+<h3>Makaleler</h3>
+<hr>
+
+{% if articles %}
+    <form action="/search" method="POST">
+        <div class="input-group">
+            <input type="search" name="keyword" class="ms-auto rounded" placeholder="Makale ara..." aria-label="Search" aria-describedby="search-addon">
+            <button type="submit" class="btn btn-outline-primary">Ara</button>
+          </div>
+    </form> 
+    <hr>
+    <ul class="list-group">
+        {% for article in articles %}
+           <a href="{{ 'detail/%s'%article.id }}" class="text-decoration-none"><li class="list-group-item ">{{ article.title }}</li></a>
+        {% endfor %}
+    </ul>
+{% else %}
+    <div class="alert alert-danger">
+        <p>Gösterilecek bir makale yok</p>
+    </div>
+{% endif %}
+
+
+
+{% endblock %}
